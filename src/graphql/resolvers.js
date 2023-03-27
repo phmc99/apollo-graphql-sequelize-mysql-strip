@@ -3,7 +3,8 @@ const SubscriptionServices = require("../services/subscription");
 const UserServices = require("../services/user");
 
 const  UserQuery = {
-  getUsers: async () => await UserServices.getUser()
+  getUsers: async () => await UserServices.getUsers(),
+  getUserById: async (root, {id}) => await UserServices.getUserById(id)
 }
 
 const  CourseQuery = {
