@@ -38,5 +38,8 @@ type Mutation {
     description: String
     price: Float
   ): String
+  createSession(
+    priceId: String
+  ): String
 }
 

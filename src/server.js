@@ -4,7 +4,7 @@ const fs = require("node:fs")
 const resolvers = require("./graphql/resolvers")
 const typeDefs = gql(fs.readFileSync("./src/graphql/typeDefs.graphql", {encoding: "utf-8"}))
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({ typeDefs, resolvers, context: ({req, res}) => ({req, res}) })
 
 server.listen(5000).then(({url}) => {
   console.log(`Server is running at ${url}`);

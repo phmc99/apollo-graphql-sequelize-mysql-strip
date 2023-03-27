@@ -19,9 +19,13 @@ const  SubscriptionsQuery = {
   getSubscriptions: async () => await SubscriptionServices.getSubscription()
 }
 
+const SubscribeMutation = {
+  createSession: async (_, {priceId}, context) => await SubscriptionServices.createSession(priceId, context)
+}
+
 
 
 const Query = {...UserQuery, ...CourseQuery, ...SubscriptionsQuery}
-const Mutation = {...CourseMutation }
+const Mutation = {...CourseMutation, ...SubscribeMutation }
 
 module.exports = { Query, Mutation }
