@@ -1,0 +1,33 @@
+type Query {
+  getUsers: [User]
+}
+
+type User {
+  id: ID!
+  name: String
+  email: String
+  password: String
+}
+
+type Query {
+  getCourses: [Course]
+}
+
+type Course {
+  id: ID!
+  name: String
+  description: String
+  price: Float
+}
+
+type Query {
+  getSubscriptions: [Subscription]
+}
+
+type Subscription {
+  id: ID!
+  userId: User
+  courseId: Course
+  isPaid: Boolean
+}
+
