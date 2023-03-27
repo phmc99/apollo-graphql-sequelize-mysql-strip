@@ -32,3 +32,11 @@ type Subscription {
   isPaid: Boolean
 }
 
+type Mutation {
+  createCourse(
+    name: String
+    description: String
+    price: Float
+  ): String
+}
+

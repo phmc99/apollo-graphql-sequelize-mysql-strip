@@ -11,11 +11,17 @@ const  CourseQuery = {
   getCourses: async () => await CourseServices.getCourse()
 }
 
+const CourseMutation = {
+  createCourse: async (_, body) => await CourseServices.createCourse(body)
+}
+
 const  SubscriptionsQuery = {
   getSubscriptions: async () => await SubscriptionServices.getSubscription()
 }
 
 
-const Query = {...UserQuery, ...CourseQuery, ...SubscriptionsQuery}
 
-module.exports = { Query }
+const Query = {...UserQuery, ...CourseQuery, ...SubscriptionsQuery}
+const Mutation = {...CourseMutation }
+
+module.exports = { Query, Mutation }
